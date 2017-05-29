@@ -1,25 +1,35 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+nav {
     background-color: #455D90;
 }
 
-li {
-    float: left;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
 }
 
-li a {
+nav ul li {
+    float: right;
+    padding: 12px 8px 12px 8px; 
+}
+
+.nav-logo{
+    color: white;
+    font-size: 20px;
+    float: left;
+    /*padding: 12px 8px 12px 8px; */
+    vertical-align: middle;
+}
+
+nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
     font-family: "Helvetica"
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+/*li a:hover {
     background-color: #111;
-}
+}*/
