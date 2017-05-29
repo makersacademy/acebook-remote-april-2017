@@ -15,6 +15,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, Time.now)
+    params.require(:post).permit(:message, created_at: Time.now)
   end
 end
