@@ -40,3 +40,16 @@ nav li a {
     font-size: 12px;
     text-align: center;
 }
+
+.button {
+    padding: 5px 5px;
+    background-color: #455D90;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    border: 0;
+    margin: 5px;
+    border-radius: 6px;
+    line-height: 18px; 
+    width: 120px;
+}
