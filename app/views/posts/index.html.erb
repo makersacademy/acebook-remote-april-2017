@@ -1,5 +1,6 @@
+<% format_url = Classes::FormatUrl.new %>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= format_url.return_formatted_url(post.message) %> </p>
 <% end %>
 
 <%= link_to new_post_path do %>
