@@ -26,4 +26,14 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'renders a post' do
+    it 'renders a post' do
+      post :create, params: { post: { message: 'My first post'} }
+      post :create, params: { post: { message: 'My second post'} }
+      expect(Post.first[:message]).to eq('My first post')
+      expect(Post.last[:message]).to eq('My second post')
+    end
+  end
+
 end
