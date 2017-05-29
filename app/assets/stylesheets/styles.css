@@ -29,6 +29,16 @@ nav li a {
     font-family: "Helvetica"
 }
 
+.footer {
+    padding: 20px 20px;
+    font-family: "Helvetica";
+    background-color: #455D90;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+
 /* Change the link color to #111 (black) on hover */
 /*li a:hover {
     background-color: #111;
