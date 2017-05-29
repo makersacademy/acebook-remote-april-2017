@@ -3,29 +3,16 @@
 
   <head>
     <title>Acebook</title>
-    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <nav>
-    <img src='images/logo.png' class='nav-logo'>
-      <ul>
-        <li><a href="index">Home</a></li>
-        <li><a href="posts/new">Post</a></li>
-        <li><a href="sessions/new">Log In</a></li>
-        <li><a href="users/new">Sign Up</a></li>
-      </ul>
-    </nav>
+    <%= render 'layouts/header' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
-
-  <footer>
-    <div class='footer'>
-    <p>Acebook All Rights Reserved 2017 &copy;</p>
-    </div>
-  </footer>
 
 </html>
