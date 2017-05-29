@@ -1,5 +1,6 @@
 nav {
     background-color: #455D90;
+    height: 60px;
 }
 
 nav ul {
@@ -11,15 +12,14 @@ nav ul {
 nav ul li {
     float: right;
     padding: 12px 8px 12px 8px;
+    line-height: 40px;
 }
 
 .nav-logo{
-    /*background-image: image-url("../assets/images/logo.png");*/
-    color: white;
-    font-size: 20px;
     float: left;
-    /*padding: 12px 8px 12px 8px; */
     vertical-align: middle;
+    height: 52px;
+    margin: 4px;
 }
 
 nav li a {

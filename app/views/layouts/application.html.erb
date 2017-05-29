@@ -10,11 +10,15 @@
 
   <body>
     <nav>
-      <img class='nav-logo' src='public/logo.png'>
-      <ul>
-        <li><a class="active" href="index">Home</a></li>
-        <li><a href="posts/new">Post a message</a></li>
-      </ul>
+      <div>
+        <img src='images/logo.png' class='nav-logo'>
+      </div>
+      <div>
+        <ul>
+          <li><a class="active" href="index">Home</a></li>
+          <li><a href="posts/new">Post a message</a></li>
+        </ul>
+      </div>
     </nav>
     <%= yield %>
   </body>
