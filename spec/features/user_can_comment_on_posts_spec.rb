@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Comment", type: :feature do
   scenario "Can comment on posts" do
     visit "/posts"
     click_link "New post"

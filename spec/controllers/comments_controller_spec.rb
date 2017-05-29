@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
   describe "POST /" do
-    before(:each) do
-      @post = Post.create(message: "Hello, world!")
-      @comment = @post.comments.create(commenter: "Bob", body: "Comment")
+    let!(:post) do
+      Post.create(message: 'Hello, World!')
     end
     it "creates a comment" do
-      expect(@post.comments[0].body).to eq("Comment")
+      post_id = post.id
+      post :create, params: { comment: { commenter: "Bob", body: "Comment" } }
+      expect(post.comments[0]).to eq("Comment")
     end
   end
 end
