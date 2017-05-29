@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Acebook</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -20,9 +21,11 @@
     </nav>
     <%= yield %>
   </body>
+
   <footer>
     <div class='footer'>
     <p>Acebook All Rights Reserved 2017 &copy;</p>
     </div>
   </footer>
+
 </html>

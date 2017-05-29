@@ -1,3 +1,7 @@
+html {
+    font-family: "Helvetica"
+}
+
 nav {
     background-color: #455D90;
     height: 60px;
@@ -15,6 +19,13 @@ nav ul li {
     line-height: 40px;
 }
 
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
 .nav-logo{
     float: left;
     vertical-align: middle;
@@ -22,25 +33,10 @@ nav ul li {
     margin: 4px;
 }
 
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: "Helvetica"
-}
-
 .footer {
     padding: 20px 20px;
-    font-family: "Helvetica";
     background-color: #455D90;
     color: white;
     font-size: 12px;
     text-align: center;
 }
-
-
-/* Change the link color to #111 (black) on hover */
-/*li a:hover {
-    background-color: #111;
-}*/
