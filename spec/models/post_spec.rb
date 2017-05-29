@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   it { is_expected.to be }
   it 'has a time and date' do
-    # date_time = Time.now.strftime('%H:%M')
-    # expect(Post.new.post_time.strftime('%H:%M')).to eq date_time
+    new_post = Post.new(message: "thing",created_at: Time.now.strftime('%H:%M'))
+    p new_post
+    expect(new_post.created_at).to eq Time.now.strftime('%H:%M')
 
-    p Post.new(message: 'post')
   end
 end
