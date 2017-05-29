@@ -6,7 +6,6 @@ class Classes::FormatUrl
       post_array.each do |word|
         if word.start_with?("www") || word.start_with?("http")
           word.replace("<a href=\"#{word}\"> #{word} </a>")
-          puts word
         end
       end
       post = post_array.join(" ")
