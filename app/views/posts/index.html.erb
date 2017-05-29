@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+<ul>
+  <li><a class="active" href="index">Home</a></li>
+  <li><a href="posts/new">Post a message</a></li>
+</ul>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
@@ -5,3 +16,6 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+</body>
+</html>
