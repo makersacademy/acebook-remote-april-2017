@@ -1,11 +1,18 @@
-# require 'rails_helper'
-#
-# feature 'posts are visible starting with the newest one' do
-#   scenario 'one can see a posts starting with the latest' do
-#     # Post.create, params { post: { message: 'My first post'} }
-#     # Post.create('My second post')
-#     post :create, params: { post: { message: 'My first post'} }
-#     post :create, params: { post: { message: 'My second post'} }
-#     expect(Post.first).to eq('My second post')
-#   end
-# end
+require 'rails_helper'
+require './app/models/post'
+require 'orderly'
+
+feature 'posts are visible starting with the newest one' do
+  scenario 'one can see a posts starting with the latest' do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "My first post!"
+    click_button "Submit"
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "My second post!"
+    click_button "Submit"
+    visit "/posts"
+    expect('My second post').to appear_before('My first post')
+    end
+end
