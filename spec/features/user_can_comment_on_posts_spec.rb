@@ -8,9 +8,9 @@ RSpec.feature "Comment", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Add a comment:")
     fill_in "Commenter",with: "Daniel"
-    fill_in "Body", with: "comment"
+    fill_in "Body", with: "This is a comment"
     click_button "Create Comment"
-    expect(page).to have_content("comment")
+    expect(page).to have_content("This is a comment")
 
 end
 end
