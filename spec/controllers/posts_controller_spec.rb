@@ -27,8 +27,8 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'renders a post' do
-    it 'renders a post' do
+  describe 'Posts are ordered' do
+    it 'shows post in order' do
       post :create, params: { post: { message: 'My first post'} }
       post :create, params: { post: { message: 'My second post'} }
       expect(Post.first[:message]).to eq('My first post')
