@@ -1,15 +1,10 @@
 language: ruby
 rvm:
   - 2.4.0
-postgres:
-  adapter: postgresql
-  database: myapp_test
-  username: postgres
-script:
-  - bundle exec rspec spec/
-services:
-  - postgresql
-before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database myapp_test' -U postgres
-  - "rake db:migrate"
+
+script: bundle exec rspec spec 
+
+script: 
+  - bundle exec bin/rake db:create 
+  - bundle exec bin/rake db:migrate 
+  - bundle exec rspec spec
