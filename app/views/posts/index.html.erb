@@ -1,7 +1,7 @@
 <% @posts.reverse.each do |post| %>
 <ul id = 'post_list'>
-  <li id = 'post'><%= post.message %></li>
-  </ul>
+  <li id = 'post'> <%= post.message %> </li>
+</ul>
 <% end %>
 
 <%= link_to new_post_path do %>
