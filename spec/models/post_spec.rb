@@ -4,6 +4,7 @@ RSpec.describe Post, type: :model do
   it { is_expected.to be }
   it 'has a time and date' do
     new_post = Post.new(message: "thing", created_at: Time.now)
-    expect(new_post.format_time).to eq "posted at #{Time.now.strftime('%H:%M')} on #{Time.now.strftime('%d/%m/%Y')}"
+    expect(new_post.time_stamp).to eq "#{Time.now.strftime('%H:%M')}"
+    expect(new_post.date_stamp).to eq "#{Time.now.strftime('%d/%m/%Y')}"
   end
 end
