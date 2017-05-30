@@ -1,4 +1,4 @@
-class Classes::FormatUrl
+module PostHelper
 
   def return_formatted_url(post)
     if has_link?(post)
@@ -28,3 +28,5 @@ class Classes::FormatUrl
   end
 
 end
+
+# Classes::Base.send :include, FormatUrl
