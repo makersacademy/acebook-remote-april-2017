@@ -8,4 +8,9 @@ script: 
   - bundle exec bin/rake db:create 
   - bundle exec bin/rake db:migrate 
   - bundle exec rspec spec
-  
+
+deploy:
+  provider: heroku
+  app: ace-book
+  api_key:
+    secure: "6b923a08-03c8-4418-a753-b3bd13c36ec4"
