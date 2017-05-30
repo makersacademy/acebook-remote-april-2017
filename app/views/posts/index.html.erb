@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
