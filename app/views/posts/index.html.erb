@@ -7,9 +7,7 @@
   <p><%= post.message %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  <button class='button'>New post</button>
-<% end %>
+<%= button_to "New Post", { action: "new" }, method: :get, class: "button" %>
 
 </body>
 </html>
