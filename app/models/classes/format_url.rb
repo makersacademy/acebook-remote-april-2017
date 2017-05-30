@@ -4,7 +4,9 @@ class Classes::FormatUrl
     if post.include?("http") || post.include?("www")
       post_array = post.split(" ")
       post_array.each do |word|
-        if word.start_with?("www") || word.start_with?("http")
+        if word.start_with?("www")
+          word.replace("<a href=\"http://#{word}\"> #{word} </a>")
+        elsif word.start_with?("http")
           word.replace("<a href=\"#{word}\"> #{word} </a>")
         end
       end
