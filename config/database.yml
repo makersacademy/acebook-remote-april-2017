@@ -1,4 +1,3 @@
-
 development:
   adapter: postgresql
   database: acebook_development
