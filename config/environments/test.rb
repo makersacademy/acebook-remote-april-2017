@@ -7,6 +7,7 @@ Rails.application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
@@ -17,11 +18,11 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.hour.seconds.to_i}"
   }
-
+  config.serve_static_assets = true
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-
+  # config.action_dispatch.show_exceptions = true
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
