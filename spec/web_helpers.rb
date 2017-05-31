@@ -16,3 +16,10 @@ def sign_in
   fill_in 'user_password', :with => "password"
   click_button 'Log in'
 end
+
+def create_a_post(text)
+  visit "/posts"
+  click_button "New Post"
+  fill_in "Message", with: text
+  click_button "Submit"
+end

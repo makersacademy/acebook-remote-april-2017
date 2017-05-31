@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
@@ -15,10 +16,10 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      post = create(:post)
       expect(Post.find_by(message: "Hello, world!")).to be
     end
-  end
+  end 
 
   describe "GET /" do
     it "responds with 200" do
@@ -26,4 +27,14 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'Posts are ordered' do
+    it 'shows post in order' do
+      post = create(:post, message: "My first post")
+      post = create(:post, message: "My second post")
+      expect(Post.first[:message]).to eq('My first post')
+      expect(Post.last[:message]).to eq('My second post')
+    end
+  end
+
 end

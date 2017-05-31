@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Acebook</title>
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -16,6 +18,11 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+
+    <%= render 'layouts/header' %>
+
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
+
 </html>

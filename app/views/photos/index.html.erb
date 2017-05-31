@@ -1,0 +1,12 @@
+<h1>Photos</h1>
+
+<%= link_to new_photo_path do%>
+New photo
+<%end%>
+<br>
+<br>
+
+<% @photos.each do |photo| %>
+  <%= photo.title %><br>
+  <%= image_tag photo.image.url (:medium)%> <br>
+<% end %>
