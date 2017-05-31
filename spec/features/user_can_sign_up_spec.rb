@@ -10,14 +10,12 @@ RSpec.feature "Sessions",  type: :feature do
 
   scenario "signs in the user", :type => :feature do
     sign_up
-    visit "/users/sign_out"
     sign_in
     page.should have_content("Signed in successfully.")
   end
 
   scenario "signs out the user", :type => :feature do
     sign_up
-    visit "/users/sign_out"
     click_on("Sign Out")
     page.should have_content("Signed out successfully.")
   end
