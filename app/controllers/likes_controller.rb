@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   before_action :find_likeable
   before_action :authenticate_user!
+  respond_to :js
 
   def create
     @likeable.liked_by User.first

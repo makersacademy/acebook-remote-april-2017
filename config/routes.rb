@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  match :like, to: 'likes#create', as: :like, via: :post
+  match :dislike, to: 'likes#destroy', as: :dislike, via: :post
+
 end
