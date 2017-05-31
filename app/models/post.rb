@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-
-validates :message, presence: true
+ include PostPresenter
+  
+  validates :message, presence: true
 
 end
