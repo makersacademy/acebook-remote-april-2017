@@ -15,7 +15,7 @@ class PhotoAlbumsController < ApplicationController
 
   private
 
-  def photo_params
+  def photo_album_params
     params.require(:photo_album).permit(:title, :location, :date)
   end
 

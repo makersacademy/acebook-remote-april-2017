@@ -4,7 +4,7 @@ require './app/models/photo_album'
 feature 'photoalbums' do
   scenario 'can have attributes name, location, date' do
     visit "/photo_albums"
-    click_on("New Album")
+    click_on("New Photo Album")
     fill_in "photo_album_title", with: "Test Album Name"
     fill_in "photo_album_location", with: "Test Location"
     fill_in "photo_album_date", with: "01/01/1970"

@@ -1,5 +1,11 @@
 <h1>Albums</h1>
 
 <%= link_to new_photo_album_path do%>
-New Album
+New Photo Album
 <%end%>
+
+<% @photo_albums.each do |photo_album| %>
+  Name: <%= photo_album.title %><br>
+  Location: <%= photo_album.location %> <br>
+  Date: <%= photo_album.print_date_stamp(photo_album.date) %> <br>
+<% end %>
