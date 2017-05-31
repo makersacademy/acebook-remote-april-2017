@@ -1,6 +1,6 @@
-<% #@groups.each do |group| %>
+<% @groups.each do |group| %>
     <li>
-	  <h3><%= @group1.title %></h3>
-	  <p><%= @group1.description %></p>
+	  <h3><%= group.title %></h3>
+	  <p><%= group.description %></p>
 	</li>
-<% #end %>
+<% end %>
