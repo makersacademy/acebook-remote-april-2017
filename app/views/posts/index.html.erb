@@ -1,7 +1,8 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% @posts.reverse.each do |post| %>
+<ul id = 'post_list'>
+  <li id = 'post'> <%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %> </li>
+</ul>
 <% end %>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
