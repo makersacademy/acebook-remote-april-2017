@@ -114,7 +114,6 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
-
     orderly (0.0.3)
       capybara (>= 1.1)
       rspec (>= 2.14)
@@ -161,9 +160,6 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rspec (3.6.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -239,6 +235,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   factory_girl_rails
   jbuilder (~> 2.5)
+  launchy
   listen (>= 3.0.5, < 3.2)
   orderly
   paperclip (~> 5.0.0)

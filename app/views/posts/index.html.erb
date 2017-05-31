@@ -1,8 +1,18 @@
-<% @posts.reverse.each do |post| %>
-<ul id = 'post_list'>
-  <li id = 'post'> <%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %> </li>
-</ul>
-<% end %>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <% @posts.reverse.each do |post| %>
+      <% @post = post %>
+      <ul id = 'post_list'>
+        <li id = 'post'> <%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %> </li>
+      </ul>
+      <h2>Comments</h2>
+      <%= render post.comments %>
+      <h2>Add a comment:</h2>
+      <%= render 'comments/form' %>
+    <% end %>
+    <%= button_to 'New Post', { action: 'new' }, method: :get, class: 'button' %>
+  </body>
+</html>
+
+
