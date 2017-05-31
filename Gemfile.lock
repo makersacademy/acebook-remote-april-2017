@@ -95,16 +95,13 @@ GEM
     orderly (0.0.3)
       capybara (>= 1.1)
       rspec (>= 2.14)
-<<<<<<< HEAD
     paperclip (5.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-=======
     pg (0.20.0)
->>>>>>> 29ec7f6926f106d2fa60b7b13ed33c3238ea0eb0
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
@@ -138,9 +135,6 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rspec (3.6.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -207,11 +201,8 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   orderly
-<<<<<<< HEAD
   paperclip (~> 5.0.0)
-=======
   pg
->>>>>>> 29ec7f6926f106d2fa60b7b13ed33c3238ea0eb0
   puma (~> 3.7)
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)

@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
- include PostPresenter
+  has_many :comments
+  include PostPresenter
   
   validates :message, presence: true
-
 end
+ 
