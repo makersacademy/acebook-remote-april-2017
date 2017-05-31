@@ -1,15 +1,15 @@
 <% @posts.each do |post| %>
 <% @post = post %>
-<p><%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %></p>
-
+<% @posts.reverse.each do |post| %>
+<ul id = 'post_list'>
+  <li id = 'post'> <%= post.message %> posted at <%= post.time_stamp %> on <%= post.date_stamp %> </li>
+</ul>
 <h2>Comments</h2>
 <%= render post.comments %>
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
 <% end %>
-
 <%= link_to new_post_path do %>
 New post
 <% end %>
