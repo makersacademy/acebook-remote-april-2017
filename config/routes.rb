@@ -2,16 +2,13 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   root 'users#index'
-  devise_for :users
-  resources :users, only: [:index, :show]
-  resources :friendships, only: [:create, :destroy]
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+  resources :users, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
   root :to => 'posts#index'
-
 
   get 'photo/index'
   get 'welcome/index'
