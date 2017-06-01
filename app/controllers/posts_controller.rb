@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  # include Devise::Test::ControllerHelpers
-
   # include FormatUrl
   before_action :authenticate_user!
 
