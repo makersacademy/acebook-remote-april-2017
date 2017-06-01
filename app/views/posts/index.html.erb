@@ -6,8 +6,8 @@
       <ul id = 'post_list'>
         <li id = 'post'>
           <%= return_formatted_url(post.message).html_safe %>
-          posted at <%= post.print_time_stamp(post.created_at) %>
-          on <%= post.print_date_stamp(post.created_at) %>
+          posted at <%= post.local_time_stamp %>
+          on <%= post.local_date_stamp %>
         </li>
       </ul>
       <h2>Comments</h2>
