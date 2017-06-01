@@ -9,6 +9,7 @@
     <br>
     <br>
 <% @photos.each do |photo| %>
+  <% @photo = photo %>
     <p> <strong>Title:</strong>
       <%=photo.title %>
       <br>
@@ -19,19 +20,7 @@
   <%= render photo.photo_comments %>
 
   <h2> Add a comment: </h2>
-  <%= form_for([photo, photo.photo_comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-    <% end %>
+  <%= render '/photo_comments/form' %>
 <%end %>
 
 
