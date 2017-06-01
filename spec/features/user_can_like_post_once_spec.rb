@@ -5,6 +5,6 @@ RSpec.feature 'Like', type: :feature do
     sign_up
     create_a_post('Hello world')
     click_button 'Like'
-    expect(page).to have_content('Add a comment:')
+    expect(page).to have_content('Like 1')
   end
 end

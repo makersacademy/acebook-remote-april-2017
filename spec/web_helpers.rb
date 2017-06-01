@@ -9,6 +9,15 @@ def sign_up
   click_button 'Sign up'
 end
 
+def sign_up_2
+  visit "/users/sign_up"
+  email = "example2@example.com"
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => "password2"
+  fill_in 'user_password_confirmation', :with => "password2"
+  click_button 'Sign up'
+end
+
 def sign_in
   visit "/users/sign_in"
   email = "example@example.com"

@@ -5,7 +5,7 @@ class LikesController < ApplicationController
 
   def create
     @likeable.liked_by current_user
-    redirect_to posts_url
+    redirect_to posts_path
   end
 
   def destroy
