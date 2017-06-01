@@ -1,9 +1,7 @@
 <h1>Albums</h1>
 
 <%= button_to 'New Photo Album', { action: 'new' }, method: :get, class: 'button' %>
-<!-- <%= link_to new_photo_album_path do%>
-New Photo Album
-<%end%> -->
+
 <br>
 <ul>
 <% @photo_albums.each do |photo_album| %>
