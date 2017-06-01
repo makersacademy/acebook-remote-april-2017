@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
 
-  # include FormatUrl
-
   def new
     @post = Post.new
   end

@@ -4,11 +4,12 @@ class LikesController < ApplicationController
   respond_to :js
 
   def create
-    @likeable.liked_by User.first
+    @likeable.liked_by current_user
+    redirect_to posts_url
   end
 
   def destroy
-    @likeable.disliked_by User.first
+    @likeable.disliked_by current_user
   end
 
   private

@@ -1,5 +1,5 @@
-<%= form_tag like_path(likeable_type: likeable.class.to_s, likeable_id: likeable_id), remote: true do %>
-  <% button_tag class: 'btn btn-block' do %>
-    like_path
+<%= form_tag like_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id), remote: true do%>
+  <% button_tag class: 'button' do %>
+    Like
   <% end %>
 <% end %>
