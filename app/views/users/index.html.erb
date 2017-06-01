@@ -1,0 +1,7 @@
+<ul>
+  <% @users.each do |user| %>
+    <p>
+      <%= user.email %><%= link_to "Add Friend"%>
+    </p>
+  <% end %>
+</ul>
