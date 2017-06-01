@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  include Devise::TestHelpers
 
   describe "GET /new " do
     it "responds with 200" do
+      sign_in users(:one)
       get :new
       expect(response).to have_http_status(200)
     end
@@ -19,7 +21,7 @@ RSpec.describe PostsController, type: :controller do
       post = create(:post)
       expect(Post.find_by(message: "Hello, world!")).to be
     end
-  end 
+  end
 
   describe "GET /" do
     it "responds with 200" do
