@@ -16,16 +16,7 @@
 
   <%= image_tag photo.image.url (:medium)%> <br>
   <h2> Comments </h2>
-  <% photo.photo_comments.each do |pc| %>
-  <p>
-    <strong>Commenter:</strong>
-      <%= pc.commenter %>
-    </p>
-    <p>
-      <strong>Comment:</strong>
-      <%= pc.body %>
-    </p>
-  <% end %>
+  <%= render photo.photo_comments %>
 
   <h2> Add a comment: </h2>
   <%= form_for([photo, photo.photo_comments.build]) do |f| %>
