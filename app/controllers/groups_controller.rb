@@ -13,6 +13,15 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
+  def show
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    Membership.create(user_id: User.current_user, group_id: params[:id])
+    redirect_to path_to_group
+  end
+
   private
 
   def group_params
