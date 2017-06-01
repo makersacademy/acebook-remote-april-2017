@@ -14,9 +14,9 @@
       <%= photo.title %><br>
       <%= image_tag photo.image.url (:medium)%> <br>
       <h2>Comments</h2>
-      <%= render photo.photo_comments %>
+      <%= render 'photo_comments/comment' %>
       <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
+      <%= render 'photo_comments/form' %>
     <% end %>
   </body>
 </html>
