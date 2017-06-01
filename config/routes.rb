@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   get 'photo/index'
   get 'welcome/index'
   root 'welcome#index'
-  resources :photo_albums, :photos
+
+  resources :photo_albums
+
+  resources :photos do
+    resources :photo_comments
+  end
+
   resources :posts do
     resources :comments
   end
