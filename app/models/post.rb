@@ -1,14 +1,15 @@
 class Post < ApplicationRecord
   has_many :comments
-  include PostPresenter
+
+  include DateTimePresenter
 
   validates :message, presence: true
 
   def local_time_stamp
-    self.created_at.localtime.strftime('%H:%M')
+    print_time_stamp(self.created_at.localtime)
   end
 
   def local_date_stamp
-    self.created_at.localtime.strftime('%d/%m/%Y')
+    print_date_stamp(self.created_at.localtime)
   end
 end
