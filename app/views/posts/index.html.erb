@@ -4,7 +4,11 @@
     <% @posts.reverse.each do |post| %>
       <% @post = post %>
       <ul id = 'post_list'>
-        <li id = 'post'> <%= return_formatted_url(post.message).html_safe %> posted at <%= post.local_time_stamp%> on <%= post.local_date_stamp %> </li>
+        <li id = 'post'>
+          <%= return_formatted_url(post.message).html_safe %>
+          posted at <%= post.local_time_stamp %>
+          on <%= post.local_date_stamp %>
+        </li>
       </ul>
       <h2>Comments</h2>
       <%= render post.comments %>
