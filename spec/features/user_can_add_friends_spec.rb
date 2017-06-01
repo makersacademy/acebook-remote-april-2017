@@ -17,6 +17,6 @@ RSpec.feature "Users",  type: :feature do
     sign_up
     click_on("Users")
     first(:link, "Add Friend").click
-    page.should have_content("Added friend.")
+    page.should have_content("Added friend")
   end
 end

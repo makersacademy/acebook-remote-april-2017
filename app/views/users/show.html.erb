@@ -1,0 +1,12 @@
+<p>Username: <%= current_user.email %></p>
+
+<h2>Your Friends</h2>
+<ul>
+  <% for friendship in current_user.friendships %>
+    <li>
+      <%= friendship.friend.email %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+</ul>

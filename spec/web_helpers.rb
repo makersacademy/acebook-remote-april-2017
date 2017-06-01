@@ -32,3 +32,11 @@ def sign_up_friend
   fill_in 'user_password_confirmation', :with => "password"
   click_button 'Sign up'
 end
+
+def add_friend
+  sign_up_friend
+  click_on 'Sign Out'
+  sign_up
+  click_on("Users")
+  first(:link, "Add Friend").click
+end
