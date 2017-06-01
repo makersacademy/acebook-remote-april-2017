@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :posts
   root :to => 'posts#index'
 
+  get 'auth/:provider/callback', to: 'sessions#create'
+
+
   get 'photo/index'
   get 'welcome/index'
   root 'welcome#index'
