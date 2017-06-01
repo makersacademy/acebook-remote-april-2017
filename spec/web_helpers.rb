@@ -32,3 +32,8 @@ def sign_up_friend
   fill_in 'user_password_confirmation', :with => "password"
   click_button 'Sign up'
 end
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({ })
+end
