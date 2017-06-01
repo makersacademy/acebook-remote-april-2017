@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   def index
     @photos = Photo.all
+    @users = User.all
+    tag = params[:tag]
   end
 
   def new
@@ -16,8 +18,6 @@ class PhotosController < ApplicationController
     @photo_id = params[:photo_id]
     @photo = Photo.find(@photo_id)
     tag = params[:tag]
-    @photo.user << tag
-    @photo.save
 
     @name = tag
     respond_to do |format|
@@ -29,6 +29,6 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:title, :image)
-  end  
+  end
 
 end

@@ -15,12 +15,12 @@ New photo
         <%= hidden_field_tag "photo_id", photo.id %>
         <%= submit_tag "Tag", :style => "float:right;" %>
         <%= text_field_tag "tag", "" %>
+        <% if tag == true %>
+          <% user = Users.where(:email=> tag) %>
+          <p> <%= user %> </p>
+        <% end %>
       <% end %>
       <strong>In picture:</strong>
-      <div>
-        <% photo.user.each do |p| %>
-          <%= p %><%= ", " unless p == photo.user.last %>
-        <% end %>
-      </div>
+
     </div>
 <% end %>
