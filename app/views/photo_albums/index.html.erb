@@ -1,11 +1,16 @@
 <h1>Albums</h1>
 
-<%= link_to new_photo_album_path do%>
+<%= button_to 'New Photo Album', { action: 'new' }, method: :get, class: 'button' %>
+<!-- <%= link_to new_photo_album_path do%>
 New Photo Album
-<%end%>
-
+<%end%> -->
+<br>
+<ul>
 <% @photo_albums.each do |photo_album| %>
+  <li>
   Name: <%= photo_album.title %><br>
   Location: <%= photo_album.location %> <br>
   Date: <%= photo_album.print_date_stamp(photo_album.date) %> <br>
+</li>
 <% end %>
+</ul>
