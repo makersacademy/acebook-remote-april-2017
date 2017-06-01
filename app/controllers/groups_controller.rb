@@ -5,12 +5,18 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create
+    @group = Group.create(group_params)
     redirect_to groups_url
   end
 
   def index
     @groups = Group.all
+  end
+
+  private
+
+  def group_params
+    params.require(:group).permit(:title)
   end
 
 end
