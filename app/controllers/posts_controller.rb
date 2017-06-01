@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # include FormatUrl
+
   before_action :authenticate_user!
 
   def new
