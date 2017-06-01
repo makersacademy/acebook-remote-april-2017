@@ -33,7 +33,7 @@ def sign_up_friend
   click_button 'Sign up'
 end
 
-def add_friend
+def sign_up_and_add_friend
   sign_up_friend
   click_on 'Sign Out'
   sign_up
