@@ -8,10 +8,8 @@ class FriendshipsController < ApplicationController
         friend = @friendship.friend
         flash[:notice] = "Error Adding Friend"
       end
-    else
-      flash[:notice] = "You're not signed in!"
-    end
       redirect_to root_url
+    end
   end
 
   def destroy

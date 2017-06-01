@@ -1,7 +1,14 @@
 <ul>
+  <% if !current_user %>
+    <h3>Sign up or Log in to add friends</h3>
+  <% end %>
+
   <% @users.each do |user| %>
     <p>
-      <%= user.email %><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <%= user.email %>
+      <% if current_user %>
+        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <% end %>
     </p>
   <% end %>
 </ul>

@@ -26,8 +26,7 @@ RSpec.feature "Users",  type: :feature do
     sign_up
     click_on 'Sign Out'
     click_on("Users")
-    first(:link, "Add Friend").click
-    page.should have_content("You're not signed in!")
+    page.should_not have_content("Add Friend")
   end
 
 end
