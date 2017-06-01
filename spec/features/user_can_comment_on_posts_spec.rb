@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Comment", type: :feature do
   scenario "Can comment on posts" do
+    sign_up
     visit "/posts"
     click_button "New Post"
     fill_in "Message", with: "Hello, world!"
