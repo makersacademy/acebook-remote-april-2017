@@ -1,22 +1,23 @@
 require 'rails_helper'
 
 RSpec.feature "Newsfeed", type: :feature do
-  scenario "User can see posts from friends in their newsfeed" do 
-    sign_up('person_1')
-    person_1_post("test_post")
-    log_out
-    sign_up('person_2')
-    person_2_add_person_1_as_friend
+  scenario "User can see posts from friends in their newsfeed" do
+    sign_up('person_1@email.com')
+    create_a_post("I'm person_1, I have a friend")
+    click_on("Sign Out")
+    sign_up('person_2@email.com')
+    click_on("Users")
+    first(:link, "Add Friend").click
     visit "/posts"
-    expect(page).to have_content("test_post")
+    expect(page).to have_content("I'm person_1, I have a friend")
   end
 
-  xscenario "User can't see post from non-friend in their newsfeed" do 
-    sign_up_person_1
-    person_1_post("test_post")
-    log_out
-    sign_up_person_2
+  scenario "User can't see post from non-friend in their newsfeed" do
+    sign_up('person_1@email.com')
+    create_a_post("I'm person_1, I have no friends")
+    click_on("Sign Out")
+    sign_up('person_2@email.com')
     visit "/posts"
-    expect(page).not.to have_content("test_post")
+    expect(page).not_to have_content("I'm person_1, I have no friends")
   end
 end
