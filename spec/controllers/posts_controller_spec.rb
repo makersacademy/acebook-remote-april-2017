@@ -14,7 +14,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-        sign_in(user)
+      user = create(:user)
+      sign_in(user)
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
@@ -27,6 +28,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /" do
     it "responds with 200" do
+      user = create(:user)
+      sign_in(user)
       get :index
       expect(response).to have_http_status(200)
     end
