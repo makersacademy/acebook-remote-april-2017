@@ -1,6 +1,10 @@
 <%= form_for @photo_album do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :message %>
+  <%= form.label :title, "Album title:" %>
+  <%= form.text_field :title %>
+  <%= form.label :location, "Album location:" %>
+  <%= form.text_field :location %>
+  <%= form.label :date, "Album date:" %>
+  <%= form.date_field :date %>
 
-  <%= form.submit "Submit" %>
+  <%= form.submit "Create album", class: 'button' %>
 <% end %>
