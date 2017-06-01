@@ -9,4 +9,18 @@ New photo
 <% @photos.each do |photo| %>
   <%= photo.title %><br>
   <%= image_tag photo.image.url (:medium)%> <br>
+
+    <div>
+      <%= form_tag "photos/tag", :remote => true do %>
+        <%= hidden_field_tag "photo_id", photo.id %>
+        <%= submit_tag "Tag", :style => "float:right;" %>
+        <%= text_field_tag "tag", "" %>
+      <% end %>
+      <strong>In picture:</strong>
+      <div>
+        <% photo.user.each do |p| %>
+          <%= p %><%= ", " unless p == photo.user.last %>
+        <% end %>
+      </div>
+    </div>
 <% end %>
