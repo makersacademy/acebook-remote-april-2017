@@ -8,7 +8,7 @@ RSpec.feature "User",  type: :feature do
     visit root_path
     expect(page).to have_link("Sign Up with Facebook")
     click_link "Sign Up with Facebook"
-    page.shoud have_content("Sign Up Successful")
+    page.should have_content("Sign Up Successful")
   end
 
 end

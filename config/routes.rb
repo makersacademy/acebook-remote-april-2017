@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
   root 'users#index'
   devise_for :users
   resources :users, only: [:index, :show]
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   root :to => 'posts#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
+  
 
 
   get 'photo/index'
