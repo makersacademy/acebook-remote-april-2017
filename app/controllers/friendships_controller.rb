@@ -1,14 +1,17 @@
 class FriendshipsController < ApplicationController
   def create
-    @friendship = current_user.friendships.build(friend_id: params[:friend_id])
-    if @friendship.save
-      flash[:notice] = "Added friend"
+    if current_user
+      @friendship = current_user.friendships.build(friend_id: params[:friend_id])
+      if @friendship.save
+        flash[:notice] = "Added friend"
+      else
+        friend = @friendship.friend
+        flash[:notice] = "Error Adding Friend"
+      end
     else
-      friend = @friendship.friend
-      flash[:notice] = "Error Adding Friend"
+      flash[:notice] = "You're not signed in!"
     end
-    redirect_to root_url
-
+      redirect_to root_url
   end
 
   def destroy
