@@ -1,2 +1,2 @@
 <h1><%=@group.title%></h1>
-<%= link_to "Join Group", method: :put %>
+<%= link_to "Join Group", group_path(@group.id), method: :put, id:"join-group" %>

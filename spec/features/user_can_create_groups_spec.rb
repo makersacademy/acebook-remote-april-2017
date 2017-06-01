@@ -18,8 +18,6 @@ RSpec.feature "Groups",  type: :feature do
       create_a_group('Group 1')
       click_on '1'
       click_on 'join-group'
-      expect(current_path).to eq '/groups/1'
-      click_on 'group-members'
       expect(page).to have_content 'example@example.com'
     end
   end
