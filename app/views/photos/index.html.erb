@@ -8,17 +8,41 @@
     <%end%>
     <br>
     <br>
+<% @photos.each do |photo| %>
+    <p> <strong>Title:</strong>
+      <%=photo.title %>
+      <br>
+    </p>
 
-    <% @photos.each do |photo| %>
-      <%@photo = photo %>
-      <%= photo.title %><br>
-      <%= image_tag photo.image.url (:medium)%> <br>
-      <h2>Comments</h2>
-      <% photo.photo_comments.each do |comment| %>
-        <%= render 'photo_comments/comment' %>
-      <% end %>
-      <h2>Add a comment:</h2>
-      <%= render 'photo_comments/form' %>
+  <%= image_tag photo.image.url (:medium)%> <br>
+  <h2> Comments </h2>
+  <% photo.photo_comments.each do |pc| %>
+  <p>
+    <strong>Commenter:</strong>
+      <%= pc.commenter %>
+    </p>
+    <p>
+      <strong>Comment:</strong>
+      <%= pc.body %>
+    </p>
+  <% end %>
+
+  <h2> Add a comment: </h2>
+  <%= form_for([photo, photo.photo_comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
     <% end %>
+<%end %>
+
+
   </body>
 </html>
