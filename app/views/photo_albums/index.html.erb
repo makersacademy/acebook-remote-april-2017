@@ -1,2 +1,14 @@
-<h1>PhotoAlbum#index</h1>
-<p>Find me in app/views/photo_album/index.html.erb</p>
+<h1>Albums</h1>
+
+<%= button_to 'New Photo Album', { action: 'new' }, method: :get, class: 'button' %>
+
+<br>
+<ul>
+<% @photo_albums.each do |photo_album| %>
+  <li>
+  Name: <%= photo_album.title %><br>
+  Location: <%= photo_album.location %> <br>
+  Date: <%= photo_album.print_date_stamp(photo_album.date) %> <br>
+</li>
+<% end %>
+</ul>
