@@ -4,11 +4,13 @@ class PostsController < ApplicationController
 
 
   def new
-    @post = Post.new
+    @post = Post.new 
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
+    @post.user_email = current_user.email
+    @post.save
     redirect_to posts_url
   end
 

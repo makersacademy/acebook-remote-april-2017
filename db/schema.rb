@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20170601155007) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "location"
-    t.datetime "date"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -53,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170601155007) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "userid"
+    t.string "user_email"
   end
 
   create_table "users", force: :cascade do |t|
