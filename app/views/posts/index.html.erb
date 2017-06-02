@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <br>
+    <%= button_to 'New Post', { action: 'new' }, method: :get, class: 'button' %>
+    <br>
+    <h2>Latest Posts:</h2>
     <% @posts.reverse.each do |post| %>
       <% @commentable = post %>
       <% @post = post %>
       <ul id = 'post_list'>
         <li id = 'post'>
+          <%= post.user.email %> says:
           <%= return_formatted_url(post.message).html_safe %>
           posted at <%= post.local_time_stamp %>
           on <%= post.local_date_stamp %>
         </li>
       </ul>
       <%= render partial: 'likes/form', locals: { likeable: @post } %>
-      <h2>Comments</h2>
+      <h3>Comments</h3>
       <%= render post.comments %>
-      <h2>Add a comment:</h2>
+      <p>Add a comment:</p>
       <%= render 'comments/form' %>
     <% end %>
-    <%= button_to 'New Post', { action: 'new' }, method: :get, class: 'button' %>
   </body>
 </html>
