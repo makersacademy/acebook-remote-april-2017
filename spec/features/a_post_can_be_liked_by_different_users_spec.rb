@@ -6,7 +6,7 @@ RSpec.feature 'Like', type: :feature do
     create_a_post('Hello world')
     click_on 'View Posts'
     click_button 'Like'
-    click_on 'Sign Out'
+    click_on 'Log Out'
     sign_up('example2@example.com')
     click_on 'View Posts'
     click_button 'Like'
