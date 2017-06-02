@@ -12,4 +12,8 @@ RSpec.feature "Comment", type: :feature do
     click_button "Create Comment"
     expect(page).to have_content("This is a comment")
   end
+
+  scenario 'Can comment on photos' do
+    
+  end
 end
