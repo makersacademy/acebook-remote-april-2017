@@ -12,6 +12,5 @@ RSpec.feature "Comment", type: :feature do
     fill_in "Body", with: "This is a comment"
     click_button "Create Comment"
     expect(page).to have_content("This is a comment")
-
-end
+  end
 end

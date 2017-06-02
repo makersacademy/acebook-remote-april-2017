@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-def sign_up
+def sign_up(email = "example@example.com")
   visit "/users/sign_up"
-  email = "example@example.com"
   fill_in 'user_email', :with => email
   fill_in 'user_password', :with => "password"
   fill_in 'user_password_confirmation', :with => "password"
@@ -22,4 +21,21 @@ def create_a_post(text)
   click_button "New Post"
   fill_in "Message", with: text
   click_button "Submit"
+end
+
+def sign_up_friend
+  visit "/users/sign_up"
+  email = "friend@example.com"
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => "password"
+  fill_in 'user_password_confirmation', :with => "password"
+  click_button 'Sign up'
+end
+
+def sign_up_and_add_friend
+  sign_up_friend
+  click_on 'Sign Out'
+  sign_up
+  click_on("Users")
+  first(:link, "Add Friend").click
 end
