@@ -8,7 +8,7 @@ def sign_up(email = "example@example.com")
   click_button 'Sign up'
 end
 
-def sign_in
+def log_in
   visit "/users/sign_in"
   email = "example@example.com"
   fill_in 'user_email', :with => email
