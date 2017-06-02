@@ -37,5 +37,5 @@ def sign_up_and_add_friend
   click_on 'Log Out'
   sign_up
   click_on("Users")
-  first(:link, "Add Friend").click
+  first(:button, "Add Friend").click
 end

@@ -7,8 +7,9 @@
     <p>
       <%= user.email %>
       <% if current_user %>
-        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+        <%= button_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
       <% end %>
+      <br>
     </p>
   <% end %>
 </ul>

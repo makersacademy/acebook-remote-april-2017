@@ -11,7 +11,7 @@ RSpec.feature "Sessions",  type: :feature do
   scenario "signs in the user", :type => :feature do
     sign_up
     click_on("Log Out")
-    sign_in
+    log_in
     page.should have_content("Logged in successfully.")
   end
 
