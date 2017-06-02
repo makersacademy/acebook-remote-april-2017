@@ -24,9 +24,11 @@ def create_a_post(text)
 end
 
 def sign_up_and_add_friend
+  sign_up
+  click_on 'Log Out'
   sign_up("friend@example.com")
   click_on 'Log Out'
-  sign_up
+  log_in
   click_on("Users")
   first(:link, "Add Friend").click
 end
