@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  before(:each) do
-    @post = Post.create(message: "Hello, world!")
-    @comment = @post.comments.create(commenter: "Bob", body: "Comment")
-  end
+  let(:post){ create :post}
+  let(:comment){ create :comment }
   it "has a body" do
-    expect(@comment.body).to eq("Comment")
+    expect(comment.body).to eq("Comment")
   end
   it "has a commenter" do
-    expect(@comment.commenter).to eq("Bob")
+    expect(comment.commenter).to eq("example@example.com")
   end
 end

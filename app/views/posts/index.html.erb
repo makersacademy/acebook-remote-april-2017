@@ -9,6 +9,7 @@
       <% @post = post %>
       <ul id = 'post_list'>
         <li id = 'post'>
+          <%= post.user.email %> says:
           <%= return_formatted_url(post.message).html_safe %>
           posted at <%= post.local_time_stamp %>
           on <%= post.local_date_stamp %>
