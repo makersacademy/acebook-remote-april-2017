@@ -13,7 +13,7 @@ RSpec.feature "Comment", type: :feature do
 
   scenario 'Can comment on photos' do
     visit "/photos"
-    click_link "New photo"
+    click_button "New photo"
     fill_in "Image title", with: "Test"
     click_button "Upload Photo"
     expect(page).to have_content("Test")
