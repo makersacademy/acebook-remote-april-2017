@@ -36,13 +36,15 @@ def sign_up_friend
   fill_in 'user_email', :with => email
   fill_in 'user_password', :with => "password"
   fill_in 'user_password_confirmation', :with => "password"
-  click_button 'Sign up'
+  click_button "Post"
 end
 
 def sign_up_and_add_friend
-  sign_up_friend
-  click_on 'Log Out'
   sign_up
+  click_on 'Log Out'
+  sign_up("friend@example.com")
+  click_on 'Log Out'
+  log_in
   click_on("Users")
-  first(:link, "Add Friend").click
+  first(:button, "Add Friend").click
 end

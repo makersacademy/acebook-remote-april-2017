@@ -2,13 +2,14 @@
   <% if !current_user %>
     <h3>Sign up or Log in to add friends</h3>
   <% end %>
-
+  <h3>Find other aces on Acebook:</h3>
   <% @users.each do |user| %>
     <p>
       <%= user.email %>
       <% if current_user %>
-        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+        <%= button_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
       <% end %>
+      <br>
     </p>
   <% end %>
 </ul>

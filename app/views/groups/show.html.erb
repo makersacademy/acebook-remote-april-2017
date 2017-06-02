@@ -1,5 +1,5 @@
 <h1><%=@group.title%></h1>
-<%= link_to "Join Group", group_path(@group.id), method: :put, id:"join-group" %><br><br>
+<%= link_to "Join Group", memberships_path(group_id: @group.id), method: :post, id:"join-group" %><br><br>
 <% unless @users.empty? %>
   Group Members:<br>
   <ul>

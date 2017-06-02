@@ -6,7 +6,7 @@ require 'rails_helper'
      visit "/posts"
      click_button "New Post"
      fill_in "Message", with: "Hello, my site is: https://www.youtube.com/"
-     click_button "Submit"
+     click_button "Post"
      expect(page).to have_link('https://www.youtube.com/', href: 'https://www.youtube.com/')
    end
  end
