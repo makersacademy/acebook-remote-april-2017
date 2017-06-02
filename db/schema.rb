@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20170601123750) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photo_albums", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
