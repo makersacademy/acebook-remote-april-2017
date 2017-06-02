@@ -12,9 +12,11 @@ RSpec.feature "Users",  type: :feature do
   end
 
   scenario "can add a friend", :type => :feature do
+    sign_up
+    click_on 'Log Out'
     sign_up("friend@example.com")
     click_on 'Log Out'
-    sign_up
+    log_in
     click_on("Users")
     first(:link, "Add Friend").click
     page.should have_content("Added friend")
