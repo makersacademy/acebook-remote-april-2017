@@ -10,7 +10,7 @@
           on <%= post.local_date_stamp %>
         </li>
       </ul>
-        
+      <%= render partial: 'likes/form', locals: { likeable: @post } %>
       <h2>Comments</h2>
       <%= render post.comments %>
       <h2>Add a comment:</h2>
