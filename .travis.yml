@@ -5,8 +5,3 @@ script:
 - bundle exec bin/rake db:create
 - bundle exec bin/rake db:migrate
 - bundle exec rspec spec
-deploy:
-  provider: heroku
-  app: ace-book
-  api_key:
-    secure: FLbsgx1MJl2G+spZFYBj+uQ5VmSv7PHMrpyXwpiALoQdpstkY9LCfo4Tho8ilmLy6zVR7TFDw0P46ldSewmSHlbHYkzXZgVnxbzYhWfcpmy/Z/yl5/ayCe07WSHguX8W3IvTP3e1zqioIiL4iEpo5sqd0HgfBo5eRFo0D5RAAdTin+Okw/enfjgg8zt41OrO+88SgovagpBb2pmRR3AJIO2zYGUMu/Gp+oUgWJo5zmKTqK9bU7J7bApiHNNhVmp/cn4Ezr8Q2d0HNcmcAixUP9ZluZ45Um2TF4mhFs5nziOVwNS9K0lwqeraddWw57+aUbMam5wBF9bwiuEma/cC4/JtbnmTKqV96cCcmciURXYoubCeK24Bi8OMjQ8OPQ+ZnpEFPy6f/XFis4vcX+hYUDGg90l5I6g4v5mEiJqD/xayZp3Gv8CnL6pMoI2y0hjHIhgkxkN74CKdA9Z/2OIpnoHl0+DFIIGpmMrqLjYqhGoQYvziMpGBc3d1Ql9rrH5nIG6iiosxOKpEFig8F2a0h6nJmGgNbuRILGSMx1WW9C6dIGMbHGfvBQQfA0x+o9WY+mar0FP0Mtkl3+CqbjdJxkY0WnWSfGSPG7fgXRb3ZqqMcwAIgb8OTWpdVaTShnws8HNxLhhRCnE7QddmM9H9ZQ20WOrlwaSAgLgpuv5kjtg=
