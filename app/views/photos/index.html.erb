@@ -9,25 +9,14 @@
     <br>
 
     <% @photos.each do |photo| %>
+    <% @commentable = photo %>
     <% @photo = photo%>
       <%= photo.title %><br>
       <%= image_tag photo.image.url (:medium)%> <br>
       <h2> Comments</h2>
       <%= render photo.comments %>
       <h2> Add a comment: </h2>
-      <%= form_for([@photo, @photo.comments.build]) do |f| %>
-      <p>
-        <%= f.label :commenter %><br>
-        <%= f.text_field :commenter %>
-      </p>
-      <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-      <% end %>
+      <%= render 'comments/form' %>
     <% end %>
   </body>
 </html>

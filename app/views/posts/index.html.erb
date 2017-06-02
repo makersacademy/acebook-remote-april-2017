@@ -2,6 +2,7 @@
 <html>
   <body>
     <% @posts.reverse.each do |post| %>
+      <% @commentable = post %>
       <% @post = post %>
       <ul id = 'post_list'>
         <li id = 'post'>
