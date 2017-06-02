@@ -5,7 +5,7 @@ RSpec.feature "Users",  type: :feature do
 
   scenario "sees a list of users", :type => :feature do
     sign_up_friend
-    click_on 'Sign Out'
+    click_on 'Log Out'
     sign_up
     click_on("Users")
     page.should have_content("friend@example.com")
@@ -13,7 +13,7 @@ RSpec.feature "Users",  type: :feature do
 
   scenario "can add a friend", :type => :feature do
     sign_up_friend
-    click_on 'Sign Out'
+    click_on 'Log Out'
     sign_up
     click_on("Users")
     first(:link, "Add Friend").click
@@ -22,9 +22,9 @@ RSpec.feature "Users",  type: :feature do
 
   scenario "cannot add a friend if not signed in", :type => :feature do
     sign_up_friend
-    click_on 'Sign Out'
+    click_on 'Log Out'
     sign_up
-    click_on 'Sign Out'
+    click_on 'Log Out'
     click_on("Users")
     page.should_not have_content("Add Friend")
   end
