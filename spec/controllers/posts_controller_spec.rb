@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   include Devise::TestHelpers
 
+  let(:user) { create :user }
+
   describe "GET /new " do
     it "responds with 200" do
       user = create(:user)
