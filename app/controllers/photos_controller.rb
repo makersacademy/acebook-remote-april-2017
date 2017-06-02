@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+
   def index
     @photos = Photo.all
     @users = User.all
@@ -14,7 +15,7 @@ class PhotosController < ApplicationController
   end
 
   def tag
-    @photo_id = params[:photo_id]
+    @photo_id = 1
     @photo = Photo.find(@photo_id)
     tag = params[:tag]
 
@@ -22,6 +23,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.js { render :layout => false}
     end
+    redirect_to photos_url
   end
 
   private

@@ -11,9 +11,9 @@ New photo
   <%= image_tag photo.image.url (:medium)%> <br>
 
     <div>
-      <%= form_tag "photos/tag", :remote => true do %>
+      <%= form_tag 'photos/tag', :remote => true do %>
         <%= collection_select(:photo, :user_id, User.all, :id, :email, include_blank: false) %>
-        <%=submit_tag "User" %>
+        <%= submit_tag "User" %>
       <% end %>
       <strong>In picture:</strong>
 

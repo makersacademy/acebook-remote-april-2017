@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :posts
   root :to => 'posts#index'
 
-  get 'photo/index'
-  post "photo/tag"
+  get 'photos/tag'
+  post 'photos/tag'
   get 'welcome/index'
   root 'welcome#index'
   resources :photo_albums, :photos
