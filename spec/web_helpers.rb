@@ -20,7 +20,7 @@ def create_a_post(text)
   visit "/posts"
   click_button "New Post"
   fill_in "Message", with: text
-  click_button "Submit"
+  click_button "Post"
 end
 
 def sign_up_and_add_friend
@@ -30,5 +30,5 @@ def sign_up_and_add_friend
   click_on 'Log Out'
   log_in
   click_on("Users")
-  first(:link, "Add Friend").click
+  first(:button, "Add Friend").click
 end
