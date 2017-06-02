@@ -5,6 +5,7 @@ FactoryGirl.define do
       post = FactoryGirl.create(:post)
       comment.post_id = post.id
     end
-    body 'Coment'
+    body 'Comment'
+    commenter "example@example.com"
   end
 end

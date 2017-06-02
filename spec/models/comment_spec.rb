@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  let(:user){ create :user, :me }
   let(:post){ create :post}
   let(:comment){ create :comment }
   it "has a body" do

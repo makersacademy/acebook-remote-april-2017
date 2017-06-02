@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe FriendshipsController, type: :controller do
   include Devise::Test::ControllerHelpers
-  let(:user) { create :user, :me }
-  let(:friend) { create :user, :friend }
+  let(:user) { create :user }
+  let(:friend) { create :user }
 
 
   describe "POST create" do

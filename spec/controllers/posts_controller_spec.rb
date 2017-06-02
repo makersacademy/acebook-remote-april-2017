@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
-  let(:user) { create :user, :me }
+  let(:user) { create :user }
 
   describe "GET /new " do
     it "responds with 200" do

@@ -1,14 +1,11 @@
 FactoryGirl.define do
+  sequence :email do |n|
+    "example#{n}@example.com"
+  end
+
   factory :user do
-    trait :me do
-      email "example@example.com"
-      password "password"
-      password_confirmation"password"
-    end
-    trait :friend do
-      email "friend@example.com"
-      password "password"
-      password_confirmation"password"
-    end
+    email
+    password "password"
+    password_confirmation "password"
   end
 end
