@@ -4,11 +4,12 @@ class FriendshipsController < ApplicationController
       @friendship = current_user.friendships.build(friend_id: params[:friend_id])
       if @friendship.save
         flash[:notice] = "Added friend"
+        redirect_to root_url
       else
         friend = @friendship.friend
-        flash[:notice] = "Error Adding Friend"
+        flash[:notice] = "Issues adding #{friend.email}: #{@friendship.errors.full_messages.join(", ")}"
+        redirect_to root_url
       end
-      redirect_to root_url
     end
   end
 

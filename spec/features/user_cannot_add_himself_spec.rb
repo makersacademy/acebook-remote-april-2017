@@ -7,7 +7,7 @@ RSpec.feature "Friends",  type: :feature do
     sign_up
     click_on('Users')
     click_on('Add Friend')
-    page.should have_content("Error Adding Friend")
+    page.should have_content("can't add yourself")
   end
 
 end

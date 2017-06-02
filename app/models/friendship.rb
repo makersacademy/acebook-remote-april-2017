@@ -5,7 +5,7 @@ class Friendship < ActiveRecord::Base
   validate :check_user
   def check_user
     if self.friend_id == self.user_id
-      errors.add(:friend, "Can't add yourself")
+      errors.add(:friend, "can't add yourself")
     end
   end
 end
