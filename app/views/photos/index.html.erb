@@ -7,6 +7,7 @@ New photo
 <br>
 
 <% @photos.each do |photo| %>
+<% @photo = photo%>
   <%= photo.title %><br>
   <%= image_tag photo.image.url (:medium)%> <br>
   <%= form_for([@photo, @photo.comments.build]) do |f| %>

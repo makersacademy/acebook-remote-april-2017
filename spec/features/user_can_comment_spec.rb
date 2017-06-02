@@ -20,5 +20,8 @@ RSpec.feature "Comment", type: :feature do
     click_button "Upload Photo"
     expect(page).to have_content("Test")
     fill_in "Commenter", with: "Paula"
+    fill_in "Body", with: "This is a photo comment."
+    click_button "Create Comment"
+    expect(page).to have_content("This is a photo comment.")
   end
 end
