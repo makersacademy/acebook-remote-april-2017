@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
     @commentable = find_commentable
-    @comment = @commentable.comments.build(comment_params)
+    @comments = @commentable.comments.build(comment_params)
   end
 
   private
