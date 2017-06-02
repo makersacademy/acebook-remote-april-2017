@@ -4,18 +4,20 @@
       <img src='http://i.imgur.com/1O64JDt.png' class='nav-logo'>
     </a>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/posts">View Posts</a></li>
-      <li><a href="/posts/new">Post</a></li>
-      <% if current_user %>
-      <li><%= link_to 'Sign Out',  destroy_user_session_path, method: :delete %></li>
-      <% end %>
-      <li><a href="/users/sign_in">Log In</a></li>
-      <li><a href="/users/sign_up">Sign Up</a></li>
-      <% if current_user %>
-      <li><a href="/users/show">Profile</a></li>
-      <% end %>
-      <li><a href="/users">Users</a></li>
+      <div>
+        <li><a href="/">Home</a></li>
+        <% if current_user %>
+        <li><a href="/users/show">Profile</a></li>
+        <% end %>
+        <li><a href="/users">Users</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <% if current_user %>
+        <li style="float:right"><%= link_to 'Log Out',  destroy_user_session_path, method: :delete %></li>
+        <% end %>
+        <li style="float:right"><a href="/users/sign_in">Log In</a></li>
+        <li style="float:right"><a href="/users/sign_up">Sign Up</a></li>
+      </div>
     </ul>
   </nav>
 </header>
