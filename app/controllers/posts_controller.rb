@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.save
     redirect_to posts_url
   end
 
