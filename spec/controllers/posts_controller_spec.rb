@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  include Devise::TestHelpers
 
   let(:user) { create :user }
 
   describe "GET /new " do
     it "responds with 200" do
+      user = create(:user)
+      sign_in(user)
       get :new
       expect(response).to have_http_status(200)
     end
@@ -13,8 +16,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-      allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-      allow(controller).to receive(:current_user).and_return(user)
+      user = create(:user)
+      sign_in(user)
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
@@ -27,6 +30,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /" do
     it "responds with 200" do
+      user = create(:user)
+      sign_in(user)
       get :index
       expect(response).to have_http_status(200)
     end
