@@ -23,6 +23,13 @@ def create_a_post(text)
   click_button "Submit"
 end
 
+def create_a_group(title)
+  visit '/groups'
+  click_on 'new-group'
+  fill_in 'group_title', with: title
+  click_button 'Submit'
+end
+
 def sign_up_friend
   visit "/users/sign_up"
   email = "friend@example.com"

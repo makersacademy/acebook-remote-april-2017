@@ -1,0 +1,11 @@
+<h1>Groups</h1>
+
+<%= link_to new_group_path, id: "new-group" do%>
+  New group
+<%end%>
+<br>
+<br>
+
+<% @groups.each do |group| %>
+  <a id="<%=group.id%>" href="/groups/<%= group.id %>"><%= group.title %></a>
+<% end %>
