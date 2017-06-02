@@ -6,6 +6,7 @@
     <br>
     <h2>Latest Posts:</h2>
     <% @posts.reverse.each do |post| %>
+      <% @commentable = post %>
       <% @post = post %>
       <ul id = 'post_list'>
         <li id = 'post'>
