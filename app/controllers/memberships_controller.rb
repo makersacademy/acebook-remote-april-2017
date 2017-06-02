@@ -1,9 +1,4 @@
 class MembershipsController < ApplicationController
-  def new
-    @group = Group.find params[:group_id]
-    @membership = Membership.new({group: group})
-  end
-
   def create
     Membership.create(membership_params) if current_user
     redirect_to group_path(params[:group_id])
