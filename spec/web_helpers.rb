@@ -29,3 +29,20 @@ def create_a_group(title)
   fill_in 'group_title', with: title
   click_button 'Submit'
 end
+
+def sign_up_friend
+  visit "/users/sign_up"
+  email = "friend@example.com"
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => "password"
+  fill_in 'user_password_confirmation', :with => "password"
+  click_button 'Sign up'
+end
+
+def sign_up_and_add_friend
+  sign_up_friend
+  click_on 'Sign Out'
+  sign_up
+  click_on("Users")
+  first(:link, "Add Friend").click
+end
