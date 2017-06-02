@@ -4,7 +4,8 @@ class LikesController < ApplicationController
 
   def create
     @likeable.liked_by current_user
-    redirect_to posts_path
+    redirect_to posts_path if @likeable_type == 'Post'
+    redirect_to photos_path if @likeable_type == 'Photo'
   end
 
   private

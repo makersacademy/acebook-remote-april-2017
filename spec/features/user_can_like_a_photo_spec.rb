@@ -6,7 +6,6 @@ RSpec.feature 'Like Photos', type: :feature do
     upload_a_photo
     visit '/photos'
     click_button 'Like'
-    save_and_open_page
     expect(page).to have_content('Like 1')
   end
 
