@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601140111) do
+ActiveRecord::Schema.define(version: 20170602105721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 20170601140111) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -37,15 +38,6 @@ ActiveRecord::Schema.define(version: 20170601140111) do
     t.datetime "updated_at", null: false
     t.string "location"
     t.datetime "date"
-  end
-
-  create_table "photo_comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "photo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["photo_id"], name: "index_photo_comments_on_photo_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -97,6 +89,4 @@ ActiveRecord::Schema.define(version: 20170601140111) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
-  add_foreign_key "comments", "posts"
-  add_foreign_key "photo_comments", "photos"
 end
