@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
 
-
-
   def create
     if params[:post_id]
      @post = Post.find(params[:post_id])

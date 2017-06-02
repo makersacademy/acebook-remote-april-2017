@@ -9,11 +9,11 @@
     <br>
 
     <% @photos.each do |photo| %>
-    <% @commentable = photo%>
-      <%= @commentable.title %><br>
-      <%= image_tag @commentable.image.url (:medium)%> <br>
+    <% @photo = photo%>
+      <%=photo.title %><br>
+      <%= image_tag photo.image.url (:medium)%> <br>
       <h2> Comments</h2>
-      <%= render @commentable.comments %>
+      <%= render photo.comments %>
       <h2> Add a comment: </h2>
       <%= render 'comments/photo_form' %>
     <% end %>
