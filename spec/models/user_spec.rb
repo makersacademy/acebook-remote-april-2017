@@ -12,4 +12,6 @@ RSpec.describe User, type: :model do
 
   it{ should have_many(:friends)}
 
+  it{ should have_many(:posts) }
+
 end
