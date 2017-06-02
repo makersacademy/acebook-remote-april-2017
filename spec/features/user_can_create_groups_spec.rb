@@ -21,4 +21,12 @@ RSpec.feature "Groups",  type: :feature do
       expect(page).to have_content 'example@example.com'
     end
   end
+
+  feature "Group link" do
+    scenario "User can access groups page via link" do
+      sign_up
+      click_on "groups"
+      expect(current_path).to eq '/groups'
+    end
+  end
 end
