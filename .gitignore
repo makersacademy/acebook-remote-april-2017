@@ -22,3 +22,5 @@
 
 .byebug_history
 public/system/
+
+app/views/photos/temp.html.erb
