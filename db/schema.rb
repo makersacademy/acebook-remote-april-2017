@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602105721) do
+ActiveRecord::Schema.define(version: 20170602111109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,11 +106,7 @@ ActiveRecord::Schema.define(version: 20170602105721) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
-<<<<<<< HEAD
-=======
-  add_foreign_key "comments", "posts"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
   add_foreign_key "posts", "users"
->>>>>>> master
 end
