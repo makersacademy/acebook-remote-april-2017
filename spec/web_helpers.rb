@@ -23,6 +23,22 @@ def create_a_post(text)
   click_button "Post"
 end
 
+def create_a_group(title)
+  visit '/groups'
+  click_on 'new-group'
+  fill_in 'group_title', with: title
+  click_button 'Submit'
+end
+
+def sign_up_friend
+  visit "/users/sign_up"
+  email = "friend@example.com"
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => "password"
+  fill_in 'user_password_confirmation', :with => "password"
+  click_button "Post"
+end
+
 def sign_up_and_add_friend
   sign_up
   click_on 'Log Out'
