@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   acts_as_votable
-  has_many :comments
+  has_many :comments, as: :commentable
 
   include DateTimePresenter
 

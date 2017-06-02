@@ -9,4 +9,17 @@ New photo
 <% @photos.each do |photo| %>
   <%= photo.title %><br>
   <%= image_tag photo.image.url (:medium)%> <br>
+  <%= form_for([@photo, @photo.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
 <% end %>
