@@ -12,13 +12,8 @@ New photo
 
     <div>
       <%= form_tag "photos/tag", :remote => true do %>
-        <%= hidden_field_tag "photo_id", photo.id %>
-        <%= submit_tag "Tag", :style => "float:right;" %>
-        <%= text_field_tag "tag", "" %>
-        <% if tag == true %>
-          <% user = Users.where(:email=> tag) %>
-          <p> <%= user %> </p>
-        <% end %>
+        <%= collection_select(:photo, :user_id, User.all, :id, :email, include_blank: false) %>
+        <%=submit_tag "User" %>
       <% end %>
       <strong>In picture:</strong>
 

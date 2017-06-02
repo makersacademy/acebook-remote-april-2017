@@ -2,7 +2,6 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     @users = User.all
-    tag = params[:tag]
   end
 
   def new
