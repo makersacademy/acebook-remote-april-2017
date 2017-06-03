@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Newsfeed visible only to signed in users' do
-  scenario 'user signes in and sees newsfeed' do
+  scenario 'user signs in and sees newsfeed' do
     sign_up
     click_on 'Log Out'
     log_in
